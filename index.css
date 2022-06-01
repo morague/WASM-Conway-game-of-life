@@ -1,0 +1,29 @@
+
+body {
+  overflow: hidden;
+}
+
+#game {
+  position: absolute;
+  top: -1%;
+  left: -1%;
+  width: 102%;
+  height: 102%;
+  z-index: -1;
+  background-color: white;
+  overflow: hidden;
+  display: grid;
+  /* grid-template-columns: repeat(32, 1fr);
+  grid-template-rows: repeat(32, 1fr); */
+  grid-gap: 1px;
+}
+
+@keyframes appear {
+  from {background-color: white;}
+  to {background-color: black;}
+}
+
+@keyframes fade {
+  from {background-color: black;}
+  to {background-color: white;}
+}
