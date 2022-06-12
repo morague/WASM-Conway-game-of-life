@@ -96,7 +96,7 @@ impl Organism {
     self.rng_genesis(&life_degree);
   }
 
-  pub fn on_epoch(&mut self) -> Self {
+  pub fn on_epoch(&mut self) {
 
     let hash_start = self.get_hash();
 
@@ -117,8 +117,10 @@ impl Organism {
         self.rng_genesis(&life_degree);
         self.epoch = 0; 
 
-    } 
-    self.clone()
+    } else if self.epoch == 1000 {
+        self.rng_genesis(&life_degree);
+        self.epoch = 0;
+    }
   }
 
   fn get_hash(&self) -> u64 {

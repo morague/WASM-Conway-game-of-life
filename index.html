@@ -9,36 +9,17 @@
     <link rel="stylesheet" href="index.css">
   </head>
   <body>
-    <div id="game">
-    </div>
+    <div id="game"></div>
 
-    <script>
-      var width;
-      var height;
-      function get_grid_dimension() {
-        let w = window.innerWidth;
-        let h = window.innerHeight;
-        let pixels = 30
-
-
-        width = Math.round(w/pixels)
-        height =Math.round(h/pixels)
-        console.log(height)
-        
-        return width, height    
-      }
-      width, height =  get_grid_dimension();
-      console.log(width, height)
-    </script>
-      
-
+    <script src="functions.js"></script>
     <script type="module">
       import init, {main} from "./pkg/wasm_game_of_life.js";
       init()
-        .then(width, height = get_grid_dimension())
+        .then(width, height = get_grid_dimension(document.getElementById('game'),30))
         .then (() => {
           main(width, height);
         });
     </script>
+
   </body>
 </html>

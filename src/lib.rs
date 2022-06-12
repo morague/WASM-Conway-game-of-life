@@ -113,7 +113,6 @@ pub fn render() {
         let game = game.borrow();
         let document = window().unwrap_throw().document().unwrap_throw();
 
-
         for index in 0..(game.grid).len() {
             let cell = document
                 .get_element_by_id(&(index).to_string())
